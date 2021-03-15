@@ -1,0 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+  @include box-sizing(border-box);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+
+.breadcrumb {
+  list-style: none;
+  margin: 10px 25px;
+  background-color: darkblue;
+  color: #fff;
+  padding: 10px;
+}
+
+
+.breadcrumb > li {
+  display: inline;
+  content: "/ ";
+}
+
+.breadcrumb li.location+li.location::before {
+  content: "/ "; 
+}
+
+.breadcrmb li.attribute a {
+  color: blue;
+}
+
+.breadcrumb li.location+li.attribute::before {
+  content: "> ";
+}
+
+.breadcrumb li.attribute::after {
+  content: "x";
+  color: red;
+  font-size: 12px;
+  vertical-align: super;
+  margin-left: 5px;
+}
